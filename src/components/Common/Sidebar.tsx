@@ -250,7 +250,7 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <BiUserCircle size={25} />
             <p> Profile </p>
           </button>
-
+          {/* 
           {!currentUser && (
             <button
               className="flex gap-4 items-center "
@@ -259,7 +259,7 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
               <HiOutlineLogin size={25} />
               <p>Demo Login</p>
             </button>
-          )}
+          )} */}
 
           {currentUser ? (
             <button
@@ -270,13 +270,13 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
               <p> Logout</p>
             </button>
           ) : (
-            <Link
-              to={`/auth?redirect=${encodeURIComponent(location.pathname)}`}
-              className="flex gap-3 items-center "
+            <button
+              className="flex gap-4 items-center "
+              onClick={guestLoginHandler}
             >
               <HiOutlineLogin size={25} />
-              <p> Login</p>
-            </Link>
+              <p>Guest Login</p>
+            </button>
           )}
 
           <button></button>
