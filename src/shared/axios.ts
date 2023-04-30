@@ -4,7 +4,7 @@ import { MOVIE_API_URL } from "./constants";
 export const API_KEY = "166ef97c1dbaca45757f8a7d461d59e0";
 
 const instance = axios.create({
-  baseURL: process.env.MOVIE_API_URL,
+  baseURL:MOVIE_API_URL,
   params: {
     api_key: API_KEY,
   },
