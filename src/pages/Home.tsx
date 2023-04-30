@@ -61,12 +61,10 @@ const Home: FC = () => {
 
   const {
     data: AnimeData,
-    isLoading : isAnimeLoading,
-    isError : isAnimeError,
-    error : errorAnime,
+    isLoading: isAnimeLoading,
+    isError: isAnimeError,
+    error: errorAnime,
   } = useQuery<any, Error>(["home-animes"], getHomeAnimes);
-
-  
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState(
@@ -78,11 +76,11 @@ const Home: FC = () => {
 
   if (isTvErrorDetail) return <div>ERR : {errorTvDetail.message} </div>;
   if (isTvError) return <div> ERR : {tvError.message} </div>;
-  if(isAnimeError) return <div>ERR : {errorAnime.message}</div>
+  if (isAnimeError) return <div>ERR : {errorAnime.message}</div>;
 
   return (
     <>
-      <Title value="Anime Stream" />
+      <Title value="47 movies" />
 
       <div className="flex justify-between items-center my-4 px-4 md:hidden">
         <Link to="/">
@@ -178,25 +176,26 @@ const Home: FC = () => {
             />
           )}
 
-          {currentTab === "anime" && <MainHomeAnimes isLoading={isAnimeLoading} animeData={AnimeData} />}
+          {currentTab === "anime" && (
+            <MainHomeAnimes isLoading={isAnimeLoading} animeData={AnimeData} />
+          )}
         </div>
 
         <div className="shrink-0 max-w-[300px] w-full hidden lg:block px-6 top-0 sticky ">
           <User />
           <SearchBox />
-         
-        
+
           {/* {currentTab === "anime" && (
             <AnimeRecommendedGenre currentTab={currentTab} />
           )} */}
-                 
+
           <RecommendedGenres currentTab={currentTab} />
           {/* CurrentTab set to movie dont foeget to make it dynamic */}
           {/* {currentTab === "movie" && (
             <RecommendedGenres currentTab={currentTab} />
           )}
           {currentTab === "tv" && <RecommendedGenres currentTab={currentTab} />} */}
-         
+
           <PopularThisWeek />
         </div>
       </div>
