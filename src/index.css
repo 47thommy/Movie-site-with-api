@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+ 
+ /* @apply bg-gray-200 text-black  overflow-x-hidden md:overflow-x-visible;  */
+  /* background-color: #F0f2f5 ;
+  color: #050505 */
+   background-color: #121212;
+  color: white 
+}
+
+.tw-flex-center {
+  @apply flex justify-center items-center;
+}
+
+.tw-multiline-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.tw-multiline-ellipsis-2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.tw-slider-range::-webkit-slider-thumb {
+  @apply appearance-none h-4 w-4 rounded-full bg-white pointer-events-auto;
+}
+
+
+.grid-cols-sm {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+
+.grid-cols-lg {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
+
+.tw-absolute-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+
+.tw-absolute-center-horizontal {
+  @apply absolute left-1/2 -translate-x-1/2;
+}
+
+
